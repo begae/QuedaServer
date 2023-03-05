@@ -19,5 +19,5 @@ class Store (
     var profilePic: URL? = null,
     var backgroundPic: URL? = null,
     var onPromotion: Boolean = false,
-    @Id @GeneratedValue var id: Int? = null,
+    @Id @GeneratedValue var id: Int? = null
 )

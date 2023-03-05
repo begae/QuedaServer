@@ -21,7 +21,8 @@ interface UserRepository : CrudRepository<User, String> {
 
 @RestController
 @RequestMapping("/api/user")
-class UserController(private val repository: UserRepository) {
+class UserController(private val repository: UserRepository,
+                     private val storeRepository: StoreRepository) {
 
     @PostMapping("/join")
     fun join(@RequestBody user: User): User? {
@@ -41,9 +42,18 @@ class UserController(private val repository: UserRepository) {
         repository.findUserByIdAndPw(id, pw)
 
     @PostMapping("/manager")
-    fun updateUserAsManager(userId: String, storeId: Int): User? {
+    fun updateUserAsManager(userId: String, storeId: Int): Boolean {
 
-        repository.updateUserAsManager(userId, storeId)
-        return repository.findUserById(userId)
+        val newStore = storeRepository.findStoreById(storeId)
+        var oldUser = repository.findUserById(userId)
+        return if (oldUser == null) {
+            false
+        } else {
+            repository.deleteById(userId)
+            val newUser = User(oldUser.id, oldUser.pw, oldUser.name, oldUser.email,
+                true, newStore)
+            repository.save(newUser)
+            true
+        }
     }
 }
