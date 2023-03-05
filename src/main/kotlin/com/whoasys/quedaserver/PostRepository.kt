@@ -41,5 +41,5 @@ class PostController(private val repository: PostRepository) {
     fun getAllPostsBy(author: String) = repository.findAllByAuthorIdOrderByAddedMillisDesc(author)
 
     @GetMapping("/{id}")
-    fun getOnePost(@PathVariable id: Int): Post? = repository.findPostById(id)
+    fun getOnePost(@PathVariable id: String): Post? = repository.findPostById(id.toInt())
 }
