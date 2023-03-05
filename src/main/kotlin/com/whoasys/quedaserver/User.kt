@@ -2,6 +2,7 @@ package com.whoasys.quedaserver
 
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
+import jakarta.persistence.ManyToOne
 
 @Entity
 class User(
@@ -10,5 +11,5 @@ class User(
     var name: String,
     var email: String,
     var isManager: Boolean = false,
-    var storeId: Int? = null
+    @ManyToOne var store: Store? = null
 )
