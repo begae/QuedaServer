@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*
 @Transactional
 interface UserRepository : CrudRepository<User, String> {
 
-    @Query(value = "select * from user where id=:id", nativeQuery = true)
     fun findUserById(id: String): User?
+
     fun findUserByIdAndPw(id: String, pw: String): User?
 
     @Modifying
