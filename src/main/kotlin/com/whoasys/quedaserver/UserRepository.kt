@@ -11,6 +11,8 @@ interface UserRepository : CrudRepository<User, String> {
 
     fun findUserById(id: String): User?
 
+    fun findUserByStoreId(storeId: Int): User?
+
     fun findUserByIdAndPw(id: String, pw: String): User?
 
     @Modifying
@@ -20,7 +22,7 @@ interface UserRepository : CrudRepository<User, String> {
 }
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 class UserController(private val repository: UserRepository,
                      private val storeRepository: StoreRepository) {
 
@@ -34,8 +36,11 @@ class UserController(private val repository: UserRepository,
         } else null
     }
 
-    @GetMapping("/find")
-    fun find(id: String): User? = repository.findUserById(id)
+    @GetMapping("/id")
+    fun findUserById(id: String): User? = repository.findUserById(id)
+
+    @GetMapping("/with")
+    fun findUserByStoreId(storeId: Int): User? = repository.findUserByStoreId(storeId)
 
     @GetMapping("/login")
     fun login(id: String, pw: String): User? =

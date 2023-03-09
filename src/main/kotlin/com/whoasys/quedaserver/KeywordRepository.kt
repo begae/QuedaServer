@@ -9,7 +9,7 @@ interface KeywordRepository : CrudRepository<Keyword, Int> {
 }
 
 @RestController
-@RequestMapping("/api/keyword")
+@RequestMapping("/keyword")
 class KeywordController(private val repository: KeywordRepository) {
 
 }

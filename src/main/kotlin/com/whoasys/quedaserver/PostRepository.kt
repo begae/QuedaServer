@@ -16,11 +16,11 @@ interface PostRepository : CrudRepository<Post, Int> {
 
     @Modifying
     @Query(value = "update post set attached:num=:key where id=:id", nativeQuery = true)
-    fun attachFiles(num: Int, id: Int, key: String)
+    fun attach(num: Int, id: Int, key: String)
 }
 
 @RestController
-@RequestMapping("/api/post")
+@RequestMapping("/post")
 class PostController(private val repository: PostRepository) {
 
     @PostMapping("/new")
@@ -31,15 +31,11 @@ class PostController(private val repository: PostRepository) {
     }
 
     @PostMapping("/attach")
-    fun attachFiles(num: Int, id: Int, key: String): Int {
+    fun attach(num: Int, id: Int, key: String) = repository.attach(num, id, key)
 
-        repository.attachFiles(num, id, key)
-        return id
-    }
-
-    @GetMapping("/by/{author}")
+    @GetMapping("/by")
     fun getAllPostsBy(author: String) = repository.findAllByAuthorIdOrderByAddedMillisDesc(author)
 
-    @GetMapping("/{id}")
-    fun getOnePost(@PathVariable id: String): Post? = repository.findPostById(id.toInt())
+    @GetMapping("/id")
+    fun getOnePost(id: Int): Post? = repository.findPostById(id)
 }

@@ -12,7 +12,7 @@ interface StoreRepository : CrudRepository<Store, Int> {
 }
 
 @RestController
-@RequestMapping("/api/store")
+@RequestMapping("/store")
 class StoreController(private val repository: StoreRepository) {
 
     @RequestMapping("/register")
@@ -21,6 +21,6 @@ class StoreController(private val repository: StoreRepository) {
         return store.id
     }
 
-    @RequestMapping("/{id}")
-    fun getOneStore(@PathVariable id: String): Store? = repository.findStoreById(id.toInt())
+    @RequestMapping("/id")
+    fun getOneStore(id: Int): Store? = repository.findStoreById(id)
 }
