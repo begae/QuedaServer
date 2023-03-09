@@ -33,6 +33,7 @@ class PostController(private val repository: PostRepository) {
     @PostMapping("/attach")
     fun attach(num: Int, id: Int, key: String) = repository.attach(num, id, key)
 
+    @ResponseBody
     @GetMapping("/by")
     fun getAllPostsBy(author: String) = repository.findAllByAuthorIdOrderByAddedMillisDesc(author)
 
