@@ -45,7 +45,7 @@ class UserController(private val repository: UserRepository,
     fun updateUserAsManager(userId: String, storeId: Int): Boolean {
 
         val newStore = storeRepository.findStoreById(storeId)
-        var oldUser = repository.findUserById(userId)
+        val oldUser = repository.findUserById(userId)
         return if (oldUser == null) {
             false
         } else {

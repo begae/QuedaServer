@@ -15,8 +15,8 @@ interface PostRepository : CrudRepository<Post, Int> {
     fun findPostById(id: Int): Post?
 
     @Modifying
-    @Query(value = "update post set attached=:urls where id=:id", nativeQuery = true)
-    fun attachFiles(id: Int, urls: String)
+    @Query(value = "update post set attached:num=:key where id=:id", nativeQuery = true)
+    fun attachFiles(num: Int, id: Int, key: String)
 }
 
 @RestController
@@ -31,9 +31,9 @@ class PostController(private val repository: PostRepository) {
     }
 
     @PostMapping("/attach")
-    fun attachFiles(id: Int, urls: String): Int {
+    fun attachFiles(num: Int, id: Int, key: String): Int {
 
-        repository.attachFiles(id, urls)
+        repository.attachFiles(num, id, key)
         return id
     }
 

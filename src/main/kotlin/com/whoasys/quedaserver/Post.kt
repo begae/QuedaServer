@@ -13,7 +13,9 @@ class Post (
     val isPromo: Boolean,
     val promoStart: String?,
     val promoEnd: String?,
-    val attached: String? = null,
+    val attached0: String? = null,
+    val attached1: String? = null,
+    val attached2: String? = null,
     @Id @GeneratedValue var id: Int? = null,
     val addedMillis: Long = System.currentTimeMillis()
 )
