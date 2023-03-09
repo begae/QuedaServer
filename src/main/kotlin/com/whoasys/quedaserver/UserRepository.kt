@@ -11,8 +11,7 @@ interface UserRepository : CrudRepository<User, String> {
 
     fun findUserById(id: String): User?
 
-    @Query(value="select id from user where store_id=:storeId", nativeQuery = true)
-    fun findUserByStoreId(storeId: Int): String?
+    fun findUserByStoreId(storeId: Int): User?
 
     fun findUserByIdAndPw(id: String, pw: String): User?
 
@@ -41,7 +40,7 @@ class UserController(private val repository: UserRepository,
     fun findUserById(id: String): User? = repository.findUserById(id)
 
     @GetMapping("/with")
-    fun findUserByStoreId(storeId: Int): String? = repository.findUserByStoreId(storeId)
+    fun findUserByStoreId(storeId: Int): User? = repository.findUserByStoreId(storeId)
 
     @GetMapping("/login")
     fun login(id: String, pw: String): User? =
