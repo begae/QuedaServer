@@ -1,4 +1,4 @@
-package com.whoasys.quedaserver
+package com.whoasys.quedaserver.store
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

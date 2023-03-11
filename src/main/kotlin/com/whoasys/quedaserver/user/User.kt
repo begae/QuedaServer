@@ -1,5 +1,6 @@
-package com.whoasys.quedaserver
+package com.whoasys.quedaserver.user
 
+import com.whoasys.quedaserver.store.Store
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.ManyToOne

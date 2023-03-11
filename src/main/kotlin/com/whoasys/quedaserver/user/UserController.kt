@@ -1,30 +1,13 @@
-package com.whoasys.quedaserver
+package com.whoasys.quedaserver.user
 
-import org.springframework.data.jpa.repository.Modifying
-import org.springframework.data.jpa.repository.Query
-import org.springframework.data.repository.CrudRepository
-import org.springframework.transaction.annotation.Transactional
+import com.whoasys.quedaserver.store.StoreRepository
 import org.springframework.web.bind.annotation.*
-
-@Transactional
-interface UserRepository : CrudRepository<User, String> {
-
-    fun findUserById(id: String): User?
-
-    fun findUserByStoreId(storeId: Int): User?
-
-    fun findUserByIdAndPw(id: String, pw: String): User?
-
-    @Modifying
-    @Query(value = "update user set is_manager=true, store_id=:storeId where id=:userId",
-        nativeQuery = true)
-    fun updateUserAsManager(userId: String, storeId: Int)
-}
 
 @RestController
 @RequestMapping("/user")
 class UserController(private val repository: UserRepository,
-                     private val storeRepository: StoreRepository) {
+                     private val storeRepository: StoreRepository
+) {
 
     @PostMapping("/join")
     fun join(@RequestBody user: User): User? {

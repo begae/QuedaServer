@@ -1,12 +1,7 @@
-package com.whoasys.quedaserver
+package com.whoasys.quedaserver.keyword
 
-import org.springframework.data.repository.CrudRepository
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-
-interface KeywordRepository : CrudRepository<Keyword, Int> {
-
-}
 
 @RestController
 @RequestMapping("/keyword")
