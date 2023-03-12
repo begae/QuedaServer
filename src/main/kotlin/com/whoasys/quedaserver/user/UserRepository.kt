@@ -16,6 +16,10 @@ interface UserRepository : CrudRepository<User, String> {
 
     fun findUserByIdAndPw(id: String, pw: String): User?
 
+    @Query(value = "select from user where latitude>=:lat-0.05 and latitude<=:lat+0.05 and" +
+             " longitude>=:lng-0.1 and longitude<=:lng+0.1", nativeQuery = true)
+    fun findUserNearby500(lat: Double, lng: Double): List<User>?
+
     @Modifying
     @Query(value = "update user set is_manager=true, store_id=:storeId where id=:userId",
         nativeQuery = true)
