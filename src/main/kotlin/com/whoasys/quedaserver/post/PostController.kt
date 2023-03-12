@@ -14,8 +14,8 @@ class PostController(private val repository: PostRepository) {
     }
 
     @ResponseBody
-    @GetMapping("/nearby")
-    fun getAllPostsNearby(): List<Post>? = repository.findPostsByOrderByAddedMillisDesc()
+    @GetMapping("/nearby1000")
+    fun getAllPostsNearby1000(lat: Double, lng: Double): List<Post>? = repository.findPostsNearby1000(lat, lng)
 
     @PostMapping("/attach")
     fun attach(num: Int, id: Int, key: String) = repository.attach(num, id, key)

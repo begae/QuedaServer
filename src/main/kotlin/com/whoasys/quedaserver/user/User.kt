@@ -11,6 +11,8 @@ class User(
     var pw: String,
     var name: String,
     var email: String,
+    var latitude: Double? = null,
+    var longitude: Double? = null,
     var isManager: Boolean = false,
     @ManyToOne var store: Store? = null
 )
