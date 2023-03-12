@@ -10,7 +10,9 @@ interface PostRepository : CrudRepository<Post, Int> {
 
     fun findAllByAuthorIdOrderByAddedMillisDesc(author: String): List<Post>?
 
-    fun findPostsByOrderByAddedMillisDesc(): List<Post>?
+    @Query(value = "select from post where author=(select from user where latitude>=:lat-0.1 and " +
+            "latitude<=:lat+0.1 and longitude>=:lng-1.0 and longitude<=:lng+1.0) order by added_millis desc", nativeQuery = true)
+    fun findPostsNearby1000(lat: Double, lng: Double): List<Post>?
 
     fun findPostById(id: Int): Post?
 
