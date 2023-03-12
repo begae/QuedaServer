@@ -13,6 +13,10 @@ class PostController(private val repository: PostRepository) {
         return post.id
     }
 
+    @ResponseBody
+    @GetMapping("/nearby")
+    fun getAllPostsNearby(): List<Post>? = repository.findPostsByOOrderByAddedMillisDesc()
+
     @PostMapping("/attach")
     fun attach(num: Int, id: Int, key: String) = repository.attach(num, id, key)
 

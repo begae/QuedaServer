@@ -10,6 +10,8 @@ interface PostRepository : CrudRepository<Post, Int> {
 
     fun findAllByAuthorIdOrderByAddedMillisDesc(author: String): List<Post>?
 
+    fun findPostsByOOrderByAddedMillisDesc(): List<Post>?
+
     fun findPostById(id: Int): Post?
 
     @Modifying
