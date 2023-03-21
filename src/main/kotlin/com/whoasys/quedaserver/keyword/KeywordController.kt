@@ -10,5 +10,9 @@ import org.springframework.web.bind.annotation.RestController
 class KeywordController(private val repository: KeywordRepository) {
 
     @PostMapping("/new")
-    fun savePost(@RequestBody keyword: Keyword) = repository.save(keyword)
+    fun savePost(@RequestBody keyword: Keyword): Int? {
+
+        repository.save(keyword)
+        return keyword.id
+    }
 }
