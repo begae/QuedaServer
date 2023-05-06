@@ -1,6 +1,7 @@
 package com.whoasys.quedaserver
 
 import com.whoasys.quedaserver.keyword.KeywordRepository
+import com.whoasys.quedaserver.likes.LikesRepository
 import com.whoasys.quedaserver.post.PostRepository
 import com.whoasys.quedaserver.store.StoreRepository
 import com.whoasys.quedaserver.user.UserRepository
@@ -17,7 +18,8 @@ class QuedaServerConfiguration {
         userRepository: UserRepository,
         postRepository: PostRepository,
         storeRepository: StoreRepository,
-        keywordRepository: KeywordRepository
+        keywordRepository: KeywordRepository,
+        likesRepository: LikesRepository
 
     ) = ApplicationRunner {
 
