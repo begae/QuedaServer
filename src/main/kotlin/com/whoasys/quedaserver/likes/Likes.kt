@@ -1,8 +1,8 @@
 package com.whoasys.quedaserver.likes
 
 import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
-import javax.annotation.processing.Generated
 
 @Entity
 class Likes (
