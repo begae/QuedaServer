@@ -12,25 +12,37 @@ class LikesController(private val repository: LikesRepository) {
     @PostMapping("/scrap")
     fun scrap(userId: String, postId: Int): Boolean {
 
-        val new = Likes(userId, postId, null, null)
-        repository.save(new)
-        return true
+        return if (repository.checkScrap(userId, postId) != null) {
+            false
+        } else {
+            val new = Likes(userId, postId, null, null)
+            repository.save(new)
+            true
+        }
     }
 
     @PostMapping("/follow")
     fun follow(userId: String, storeId: Int): Boolean {
 
-        val new = Likes(userId, null, storeId, null)
-        repository.save(new)
-        return true
+        return if (repository.checkFollow(userId, storeId) != null) {
+            false
+        } else {
+            val new = Likes(userId, null, storeId, null)
+            repository.save(new)
+            true
+        }
     }
 
     @PostMapping("/select")
     fun selectKeyword(userId: String, keywordId: Int): Boolean {
 
-        val new = Likes(userId, null, null, keywordId)
-        repository.save(new)
-        return true
+        return if (repository.checkKeyword(userId, keywordId) != null) {
+            false
+        } else {
+            val new = Likes(userId, null, null, keywordId)
+            repository.save(new)
+            true
+        }
     }
 
     @GetMapping("/posts")
