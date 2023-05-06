@@ -8,13 +8,13 @@ import org.springframework.data.repository.CrudRepository
 
 interface LikesRepository : CrudRepository<Likes, Int> {
 
-    @Query(value = "select id from likes where user_id=:userId and post_id=:postId")
+@Query(value = "select id from likes where user_id=:userId and post_id=:postId", nativeQuery = true)
     fun checkScrap(userId: String, postId: Int): Int?
 
-    @Query(value = "select id from likes where user_id=:userId and store_id=:storeId")
+    @Query(value = "select id from likes where user_id=:userId and store_id=:storeId", nativeQuery = true)
     fun checkFollow(userId: String, storeId: Int): Int?
 
-    @Query(value = "select id from likes where user_id=:userId and keyword_id=:keywordId")
+    @Query(value = "select id from likes where user_id=:userId and keyword_id=:keywordId", nativeQuery = true)
     fun checkKeyword(userId: String, keywordId: Int): Int?
 
     @Query(value = "select * from post where id = (select post_id from likes " +
