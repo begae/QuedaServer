@@ -8,15 +8,24 @@ import org.springframework.data.repository.CrudRepository
 
 interface LikesRepository : CrudRepository<Likes, Int> {
 
-    @Query(value = "select all from post where id = (select post_id from likes " +
+    @Query(value = "select id from likes where user_id=:userId and post_id=:postId")
+    fun checkScrap(userId: String, postId: Int): Int?
+
+    @Query(value = "select id from likes where user_id=:userId and store_id=:storeId")
+    fun checkFollow(userId: String, storeId: Int): Int?
+
+    @Query(value = "select id from likes where user_id=:userId and keyword_id=:keywordId")
+    fun checkKeyword(userId: String, keywordId: Int): Int?
+
+    @Query(value = "select * from post where id = (select post_id from likes " +
             "where user_id=:userId and post_id is not null)", nativeQuery = true)
     fun getScraps(userId: String): List<Post>?
 
-    @Query(value = "select all from store where id = (select store_id from likes " +
+    @Query(value = "select * from store where id = (select store_id from likes " +
             "where user_id=:userId and store_id is not null)", nativeQuery = true)
     fun getFollowing(userId: String): List<Store>?
 
-    @Query(value = "select all from keyword where id = (select keyword_id from likes " +
+    @Query(value = "select * from keyword where id = (select keyword_id from likes " +
             "where user_id=:userId and keyword_id is not null)", nativeQuery = true)
     fun getKeywords(userId: String): List<Keyword>?
 }
