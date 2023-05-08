@@ -17,9 +17,9 @@ interface LikesRepository : CrudRepository<Likes, Int> {
     @Query(value = "select id from likes where user_id=:userId and keyword_id=:keywordId", nativeQuery = true)
     fun checkKeyword(userId: String, keywordId: Int): Int?
 
-    @Query(value = "select * from post where id in (select post_id from likes " +
-            "where user_id=:userId and post_id is not null)", nativeQuery = true)
-    fun getScraps(userId: String): List<Post>?
+    @Query(value = "select post_id from likes " +
+            "where user_id=:userId and post_id is not null", nativeQuery = true)
+    fun getScraps(userId: String): List<Int>?
 
     @Query(value = "select * from store where id = (select store_id from likes " +
             "where user_id=:userId and store_id is not null)", nativeQuery = true)

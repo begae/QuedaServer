@@ -14,6 +14,8 @@ interface PostRepository : CrudRepository<Post, Int> {
 
     fun findPostById(id: Int): Post?
 
+    fun findAllByIdIn(ids: List<Int>?): List<Post>?
+
     @Modifying
     @Query(value = "update post set attached:num=:key where id=:id", nativeQuery = true)
     fun attach(num: Int, id: Int, key: String)
