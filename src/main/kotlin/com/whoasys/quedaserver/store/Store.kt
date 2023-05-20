@@ -8,11 +8,11 @@ import java.net.URL
 
 @Entity
 class Store (
-    val name: String,
-    val registration: String,
-    val address: String,
-    val latitude: Double,
-    val longitude: Double,
+    var name: String,
+    var registration: String,
+    var address: String,
+    var latitude: Double,
+    var longitude: Double,
     var phone: String,
     var openTime: String,
     var noticeId: Int? = null,
