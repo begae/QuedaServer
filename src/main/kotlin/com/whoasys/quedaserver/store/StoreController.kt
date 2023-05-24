@@ -23,11 +23,11 @@ class StoreController(private val repository: StoreRepository) {
     @RequestMapping("/id")
     fun getOneStore(id: Int): Store? = repository.findStoreById(id)
 
-    /*@GetMapping("/{id}") /---  수정본 -> 정상 작동 확인 후 교체
-      fun getOneStore(@PathVariable id: Int): Store? = repository.findStoreById(id) */
+    @GetMapping("/{id}")
+    fun getStoreById(@PathVariable id: Int): Store? = repository.findStoreById(id)
 
     // 매장 정보 수정 API
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     fun updateStore(
         @PathVariable id: Int,
         @RequestBody storeUpdate: Store
