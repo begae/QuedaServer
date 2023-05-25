@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92a6d01e-749a-4258-a6e0-118d62759abf" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="92a6d01e-749a-4258-a6e0-118d62759abf" name="변경" comment="수정 없음">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/store/StoreController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/store/StoreController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/user/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/user/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/likes/LikesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/likes/LikesRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/store/StoreRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/store/StoreRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/user/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/whoasys/quedaserver/user/UserController.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +45,19 @@
       <option name="presentableId" value="Default" />
       <updated>1684598721515</updated>
       <workItem from="1684928104772" duration="26000" />
-      <workItem from="1684928152167" duration="630000" />
+      <workItem from="1684928152167" duration="830000" />
+      <workItem from="1684934064316" duration="99000" />
+      <workItem from="1684947229266" duration="122000" />
+      <workItem from="1684978278768" duration="418000" />
     </task>
+    <task id="LOCAL-00001" summary="수정 없음">
+      <created>1684928979774</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684928979774</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -62,5 +73,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="수정 없음" />
+    <option name="LAST_COMMIT_MESSAGE" value="수정 없음" />
   </component>
 </project>

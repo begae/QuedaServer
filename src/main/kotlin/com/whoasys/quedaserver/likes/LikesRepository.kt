@@ -1,7 +1,6 @@
 package com.whoasys.quedaserver.likes
 
 import com.whoasys.quedaserver.keyword.Keyword
-import com.whoasys.quedaserver.post.Post
 import com.whoasys.quedaserver.store.Store
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.CrudRepository

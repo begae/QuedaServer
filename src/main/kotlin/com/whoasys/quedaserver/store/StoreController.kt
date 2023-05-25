@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("/store")
 class StoreController(private val repository: StoreRepository) {
 
-    @RequestMapping("/register")
+    @PostMapping("/register")
     fun register(@RequestBody store: Store): Int? {
         repository.save(store)
         return store.id
@@ -20,7 +20,10 @@ class StoreController(private val repository: StoreRepository) {
         }*/
 
 
-    @RequestMapping("/id")
+    @GetMapping("/temp")
+    fun temporary(): List<Store>? = repository.temporary()
+
+    @GetMapping("/id")
     fun getOneStore(id: Int): Store? = repository.findStoreById(id)
 
     @GetMapping("/{id}")

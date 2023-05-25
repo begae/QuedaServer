@@ -39,7 +39,7 @@ class UserController(private val repository: UserRepository,
         } else {
             repository.deleteById(userId)
             val newUser = User(oldUser.id, oldUser.pw, oldUser.name, oldUser.email,
-                null, null, true, newStore)
+                isManager = true, store = newStore)
             repository.save(newUser)
             true
         }
