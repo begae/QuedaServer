@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92a6d01e-749a-4258-a6e0-118d62759abf" name="변경" comment="프사있는 매장 선택 임시" />
+    <list default="true" id="92a6d01e-749a-4258-a6e0-118d62759abf" name="변경" comment="프사있는 매장 선택 임시">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +46,9 @@
       <workItem from="1684934064316" duration="99000" />
       <workItem from="1684947229266" duration="122000" />
       <workItem from="1684978278768" duration="656000" />
+      <workItem from="1684983031232" duration="121000" />
+      <workItem from="1684983223062" duration="1174000" />
+      <workItem from="1685006459949" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="수정 없음">
       <created>1684928979774</created>
@@ -59,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684978927868</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="프사있는 매장 선택 임시">
+      <created>1684983111886</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684983111886</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
