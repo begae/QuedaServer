@@ -20,6 +20,7 @@ class StoreController(private val repository: StoreRepository) {
         }*/
 
 
+    @ResponseBody
     @GetMapping("/temp")
     fun temporary(): List<Store>? = repository.temporary()
 
