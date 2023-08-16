@@ -3,8 +3,6 @@ package com.whoasys.quedaserver.store
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
-import jakarta.persistence.ManyToOne
-import java.net.URL
 
 @Entity
 class Store (
